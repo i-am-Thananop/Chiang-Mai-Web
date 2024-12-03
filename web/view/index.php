@@ -6,8 +6,17 @@
     <title>Index Chiang Mai Tourism</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Thai+Sarabun&display=swap" rel="stylesheet">
 
     <style>
+        .dynamic-height-section {
+            min-height: 100vh;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .custom-container {
             display: flex;
             align-items: flex-start;
@@ -43,7 +52,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Thai Sarabun', sans-serif;
         }
 
         .menu-container {
@@ -68,7 +77,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 18px;
+            font-size: 26px;
             font-weight: bolder;
             color: white;
             text-shadow: 
@@ -105,18 +114,11 @@
             transform: scale(1.05);
             opacity: 0.9;
         }
-
-        .separator-line {
-            width: 100%;
-            border: none;
-            border-top: 4px solid #000000;
-            margin: 30px 0;
-        }
     </style>
 </head>
 <body>
     <div class="content">
-        <section class="vh-100" style="background-image: url('../modal/history/1089078390.jpg'); background-size: cover; background-position: center;">
+        <section class="dynamic-height-section" style="background-image: url('../modal/history/1089078390.jpg'); background-size: cover; background-position: center;">
             <div class="container py-5">
                 <!-- หัวของเว็บ -->
                 <div class="d-flex justify-content-center">
@@ -145,16 +147,13 @@
                     </div>
                 </div>
 
-                <!-- Line separator -->
-                <hr class="separator-line">
-
                 <!-- เมนู -->
                 <div class="menu-container">
-                    <a href="#tourist" class="menu-item tourist">
-                        <div class="menu-text">แหล่งท่องเที่ยว</div>
+                    <a href="travel/travel_index.php" class="menu-item tourist">
+                        <div class="menu-text">แหล่ง <br>ท่องเที่ยว</div>
                     </a>
                     <a href="#restaurant" class="menu-item restaurant">
-                        <div class="menu-text">ร้านอาหารและคาเฟ่</div>
+                        <div class="menu-text">ร้านอาหาร <br>และคาเฟ่</div>
                     </a>
                     <a href="#market" class="menu-item market">
                         <div class="menu-text">เดินชมตลาด</div>

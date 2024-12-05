@@ -152,7 +152,7 @@
                     <a href="travel/travel_index.php" class="menu-item tourist">
                         <div class="menu-text">แหล่ง <br>ท่องเที่ยว</div>
                     </a>
-                    <a href="#restaurant" class="menu-item restaurant">
+                    <a href="restaurant_cafe/restaurant_index.php" class="menu-item restaurant">
                         <div class="menu-text">ร้านอาหาร <br>และคาเฟ่</div>
                     </a>
                     <a href="#market" class="menu-item market">

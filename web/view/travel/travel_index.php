@@ -57,13 +57,11 @@
     </style>
 </head>
 <body>
+    <?php include('navbar.php') ?>
+
     <div class="content">
         <section class="background">
-            <div class="container py-2">
-                <a href="../index.php" class="btn btn-primary mb-2">ย้อนกลับ</a>
-            </div>
-
-            <div class="container py-1">
+            <div class="container py-5">
                 <div class="d-flex justify-content-center">
                     <h3 style="font-size: 45px; color: #000; font-weight: 700;">แหล่งท่องเที่ยว</h3>
                 </div>

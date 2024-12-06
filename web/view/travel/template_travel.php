@@ -190,18 +190,11 @@
     ?>
 </head>
 <body>
+    <?php include('navbar_template.php') ?>
+
     <div class="content">
         <section class="background">
-            <div class="container py-2">
-                <a href=" travel_index.php" style="text-decoration: none; background: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-house-fill mb-2" viewBox="0 0 16 16" title="ย้อนกลับ" style="color: #000;">
-                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
-                        <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
-                    </svg>
-                </a>
-            </div>
-
-            <div class="container py-1">
+            <div class="container py-3">
                 <div class="d-flex justify-content-center mb-3">
                     <div style="background-color: #fff; border-radius: 15px; padding: 20px; text-align: center; width: 35%; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);">
                         <h3 class="text-dark fw-bold"><?php echo $selected_attraction['name']; ?></h3>    

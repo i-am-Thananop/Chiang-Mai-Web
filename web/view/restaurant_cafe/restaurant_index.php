@@ -24,10 +24,22 @@
 
         .custom-shadow {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-color: #0023ff;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <?php include('navbar.php') ?>
+
     <div class="content">
         <section class="vh-100">
             <div class="container py-5 h-100">
@@ -63,6 +75,8 @@
                 </div>
             </div>
 
+            
+
         </section>
     </div>
 
@@ -73,6 +87,7 @@
     <script>
         const restaurants = [
             {
+                id: 1,
                 name: "ร้านก๋วยเตี๋ยวห้อยขา",
                 description: "ร้านก๋วยเตี๋ยวห้อยขาเป็นร้านก๋วยเตี๋ยวที่มีบรรยากาศเป็นเอกลักษณ์ โดยการนั่งทานในลักษณะห้อยขา ทำให้ได้รับประสบการณ์ที่ไม่เหมือนใคร เมนูแนะนำคือก๋วยเตี๋ยวรสชาติเข้มข้น พร้อมน้ำซุปที่มีรสกลมกล่อม",
                 transportation: {
@@ -86,6 +101,7 @@
                 ]
             },
             {
+                id: 2,
                 name: "ร้านข้าวซอยแม่สาย",
                 description: "ร้านนี้ขึ้นชื่อเรื่อง 'ข้าวซอย' ที่เป็นอาหารพื้นเมืองของเชียงใหม่ เสิร์ฟข้าวซอยไก่หรือเนื้อในน้ำซุปข้น ๆ ที่รสชาติกลมกล่อม โดยมีการใช้เส้นข้าวซอยที่ทำเอง",
                 transportation: {
@@ -99,6 +115,7 @@
                 ]
             },
             {
+                id: 3,
                 name: "ร้านอาหารทิพย์สมัย",
                 description: "ร้านนี้เป็นที่รู้จักในเรื่องของอาหารท้องถิ่นที่หลากหลาย เช่น ขนมจีนน้ำเงี้ยว, แกงฮังเล ซึ่งเป็นเมนูที่สะท้อนความเป็นเชียงใหม่ได้อย่างดี",
                 transportation: {
@@ -112,6 +129,7 @@
                 ]
             },
             {
+                id: 4,
                 name: "ไก่ย่าง วิเชียรบุรี นิมมานเหมินทร์",
                 description: "ไก่ย่างวิเชียรบุรี นิมมานเหมินทร์ เป็นร้านอาหารที่ขึ้นชื่อเรื่องไก่ย่างสูตรเด็ด เนื้อฉ่ำ หนังกรอบ มาพร้อมน้ำจิ้มรสเด็ดและเมนูอาหารอีสานหลากหลาย",
                 transportation: {
@@ -125,6 +143,7 @@
                 ]
             },
             {
+                id: 5,
                 name: "ร้านเฟื่องฟ้า",
                 description: "ร้านนี้มีชื่อเสียงในการเสิร์ฟอาหารไทยประยุกต์ที่บรรยากาศดี มีทั้งอาหารไทยรสจัดและอาหารที่มีการตกแต่งอย่างสวยงาม",
                 transportation: {
@@ -146,29 +165,33 @@
                 const card = document.createElement("div");
                 card.classList.add("col-12", "col-md-4", "mb-4");
 
+                const carouselId = `carousel-${restaurant.id}`;
+
                 card.innerHTML = `
-                    <div class="card custom-shadow">
-                        <div class="card-header fs-5 fw-bold">${restaurant.name}</div>
-                        <div class="card-body">
-                            <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    ${restaurant.images.map((image, index) => `
-                                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                                            <img src="${image}" class="d-block w-100" alt="Image of ${restaurant.name}">
-                                        </div>
-                                    `).join('')}
+                    <a href="restaurant_template.php?id=${restaurant.id}">
+                        <div class="card custom-shadow">
+                            <div class="card-header text-bg-primary text-white fs-5 fw-bold">${restaurant.name}</div>
+                            <div class="card-body">
+                                <div id="${carouselId}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        ${restaurant.images.map((image, index) => `
+                                            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                                <img src="${image}" class="d-block w-100" alt="Image of ${restaurant.name}">
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 `;
 
                 restaurantCardsContainer.appendChild(card);

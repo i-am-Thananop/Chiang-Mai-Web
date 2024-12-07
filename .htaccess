@@ -1,1 +1,5 @@
 AddType application/x-httpd-php .php
+location ~ \.php$ {
+    include snippets/fastcgi-php.conf;
+    fastcgi_pass unix:/var/run/php/php7.4-fpm.sock; # Adjust version
+}

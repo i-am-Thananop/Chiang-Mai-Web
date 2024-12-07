@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Thai+Sarabun&display=swap" rel="stylesheet">
+
+    <style>
+        .line-with-text {
+            border-left: 4px solid #0023ff; 
+            padding-left: 15px; 
+            margin: 0; 
+        }
+
+        .line-between {
+            border: 2px solid #0023ff; 
+            min-width: 100%;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .custom-shadow {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-color: #0023ff;
+        }
+
+        
+        .custom-cafe-shadow {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-color: #c2cb00;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <?php include('navbar.php') ?>
+
+    <div class="content">
+        <section class="vh-100">
+            <div class="container py-5 h-100">
+                <p class="fs-3 text-dark fw-bold line-with-text">ร้านอาหารและคาเฟ่ ในจังหวัดเชียงใหม่</p>
+
+                <div class="row d-flex align-items-center py-5">
+                    <div class="col-12">
+                        <div id="restaurantCards" class="row"></div>
+
+                        <!-- <div class="card custom-shadow">
+                            <div class="card-header fs-5 fw-bold">
+                                หัวข้อ
+                            </div>
+                            
+
+                            <div class="card-body">
+                                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner" id="carouselImages">
+
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="line-between"></div>
+
+                <div class="row d-flex align-items-center py-5">
+                    <div class="col-12">
+                        <div id="cafeCards" class="row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script src="../../controller/data_restaurant.js"></script> -->
+
+    <script>
+        const restaurants = [
+            {
+                id: 1,
+                name: "ร้านก๋วยเตี๋ยวห้อยขา",
+                description: "ร้านก๋วยเตี๋ยวห้อยขาเป็นร้านก๋วยเตี๋ยวที่มีบรรยากาศเป็นเอกลักษณ์ โดยการนั่งทานในลักษณะห้อยขา ทำให้ได้รับประสบการณ์ที่ไม่เหมือนใคร เมนูแนะนำคือก๋วยเตี๋ยวรสชาติเข้มข้น พร้อมน้ำซุปที่มีรสกลมกล่อม",
+                transportation: {
+                    public: "ใช้บริการรถสองแถวหรือรถสาธารณะที่วิ่งในเส้นทางจากตัวเมืองเชียงใหม่ไปยังอำเภอแม่ริม",
+                    private: "ขับไปตามเส้นทางที่ผ่านถนนเชียงใหม่-แม่ริม ซึ่งใช้เวลาประมาณ 20-30 นาทีจากตัวเมือง"
+                },
+                images: [
+                    "../../modal/restaurant/r1.jpg",
+                    "../../modal/restaurant/r2.jpg",
+                    "../../modal/restaurant/r3.jpg"
+                ]
+            },
+            {
+                id: 2,
+                name: "ร้านข้าวซอยแม่สาย",
+                description: "ร้านนี้ขึ้นชื่อเรื่อง 'ข้าวซอย' ที่เป็นอาหารพื้นเมืองของเชียงใหม่ เสิร์ฟข้าวซอยไก่หรือเนื้อในน้ำซุปข้น ๆ ที่รสชาติกลมกล่อม โดยมีการใช้เส้นข้าวซอยที่ทำเอง",
+                transportation: {
+                    public: "ขึ้นรถสองแถวหรือรถเมล์ที่ไปเส้นทางสายข้าวซอยในตัวเมืองเชียงใหม่",
+                    private: "ร้านอยู่ในตัวเมืองเชียงใหม่ ใช้เส้นทางไปตามถนนที่ใกล้เคียงกับสถานที่ท่องเที่ยวหลัก"
+                },
+                images: [
+                    "../../modal/restaurant/r-21.jpg",
+                    "../../modal/restaurant/r-22.jpg",
+                    "../../modal/restaurant/r-23.jpg"
+                ]
+            },
+            {
+                id: 3,
+                name: "ร้านมีนา",
+                description: "ร้านมีนาเสิร์ฟอาหารไทยที่เน้นการใช้ข้าวเป็นวัตถุดิบหลัก โดยมีทั้งเมนูข้าวผัด, ข้าวต้ม, ข้าวหน้าเนื้อ, ข้าวแกง และเมนูอื่น ๆ ที่สอดแทรกความคิดสร้างสรรค์และรสชาติที่ลงตัวในแต่ละจาน บรรยากาศในร้านสะอาด สบายๆ มีการตกแต่งที่ให้ความรู้สึกอบอุ่นและเป็นกันเอง",
+                transportation: {
+                    public: " สามารถขึ้นรถเมล์ในเส้นทางที่ไปเชียงใหม่เกษตรหรือในเส้นทางหลักที่ผ่านตัวเมืองเชียงใหม่ เส้นทางที่ผ่านถนนนิมมานเหมินทร์",
+                    private: "ขับรถไปตามทางหลวงหมายเลข 108 ที่เชื่อมต่อระหว่างเชียงใหม่และหางดง บริเวณที่ตั้งร้าน Meena จะอยู่ใกล้กับหมู่บ้านบ่อสร้าง (Borsang) และสามารถสังเกตป้ายบอกทางได้อย่างชัดเจน"
+                },
+                images: [
+                    "../../modal/restaurant/r-31.jpg",
+                    "../../modal/restaurant/r-32.jpg",
+                    "../../modal/restaurant/r-33.jpg"
+                ]
+            },
+            {
+                id: 4,
+                name: "ไก่ย่าง วิเชียรบุรี นิมมานเหมินทร์",
+                description: "ไก่ย่างวิเชียรบุรี นิมมานเหมินทร์ เป็นร้านอาหารที่ขึ้นชื่อเรื่องไก่ย่างสูตรเด็ด เนื้อฉ่ำ หนังกรอบ มาพร้อมน้ำจิ้มรสเด็ดและเมนูอาหารอีสานหลากหลาย",
+                transportation: {
+                    public: "จากในตัวเมืองเชียงใหม่ สามารถเรียกรถแดงไปยังถนนนิมมานเหมินทร์ แจ้งคนขับว่าต้องการไปไก่ย่างวิเชียรบุรี",
+                    private: "ขับรถมายังถนนนิมมานเหมินทร์ ร้านอยู่ในซอย นิมมานเหมินทร์ ซอย 7"
+                },
+                images: [
+                    "../../modal/restaurant/r-41.jpg",
+                    "../../modal/restaurant/r-42.jpg",
+                    "../../modal/restaurant/r-43.jpg"
+                ]
+            },
+            {
+                id: 5,
+                name: "ร้านเฟื่องฟ้า",
+                description: "ร้านนี้มีชื่อเสียงในการเสิร์ฟอาหารไทยประยุกต์ที่บรรยากาศดี มีทั้งอาหารไทยรสจัดและอาหารที่มีการตกแต่งอย่างสวยงาม",
+                transportation: {
+                    public: "ขึ้นรถสองแถวที่วิ่งในเส้นทางจากตัวเมืองไปยังพื้นที่บริเวณหางดอย",
+                    private: "ใช้เส้นทางถนนสายหลักไปยังเขตหางดอย เชียงใหม่"
+                },
+                images: [
+                    "../../modal/restaurant/r-51.jpg",
+                    "../../modal/restaurant/r-52.jpg",
+                    "../../modal/restaurant/r-53.jpg"
+                ]
+            }
+        ];
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const restaurantCardsContainer = document.getElementById("restaurantCards");
+
+            restaurants.forEach((restaurant) => {
+                const card = document.createElement("div");
+                card.classList.add("col-12", "col-md-4", "mb-4");
+
+                const carouselId = `carousel-${restaurant.id}`;
+
+                card.innerHTML = `
+                    <a href="restaurant_template.php?id=${restaurant.id}">
+                        <div class="card custom-shadow">
+                            <div class="card-header text-bg-primary text-white fs-5 fw-bold">${restaurant.name}</div>
+                            <div class="card-body">
+                                <div id="${carouselId}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        ${restaurant.images.map((image, index) => `
+                                            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                                <img src="${image}" class="d-block w-100" alt="Image of ${restaurant.name}">
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+
+                restaurantCardsContainer.appendChild(card);
+            });
+        });
+
+        const cafes = [
+            {
+                id: 1,
+                name: "Ristr8to",
+                description: "คาเฟ่ที่มีชื่อเสียงในเรื่องของกาแฟที่คัดสรรอย่างดีจากทั่วโลก พร้อมบาริสต้าฝีมือเยี่ยมที่ทำให้กาแฟรสชาติกลมกล่อมและคงความเป็นเอกลักษณ์ ร้านมีบรรยากาศที่อบอุ่นและเป็นกันเอง เหมาะสำหรับคนรักกาแฟ",
+                travel: {
+                    publicTransport: "ขึ้นรถสองแถวหรือบริการรถสาธารณะที่มุ่งหน้าไปยังถนนนิมมานเหมินทร์",
+                    privateCar: "ร้านตั้งอยู่บนถนนนิมมานเหมินทร์ สามารถขับรถมาจากตัวเมืองเชียงใหม่ได้อย่างสะดวก ใช้เวลาไม่นาน"
+                },
+                images: [
+                    "../../modal/cafe/i11.jpg",
+                    "../../modal/cafe/i12.jpg",
+                    "../../modal/cafe/i13.jpg"
+                ]
+            },
+            {
+                id: 2,
+                name: "The Barn: Eatery Design",
+                description: "คาเฟ่ที่มีบรรยากาศโปร่งโล่ง ด้วยการตกแต่งที่ใช้วัสดุไม้และสไตล์มินิมอล มีเมนูกาแฟและขนมหวานที่อร่อยไม่แพ้กัน จุดเด่นคือความสดใหม่ของวัตถุดิบและรสชาติที่เป็นธรรมชาติ",
+                travel: {
+                    publicTransport: "สามารถขึ้นรถสองแถวที่วิ่งในเส้นทางไปยังย่านนิมมานเหมินทร์ หรือใช้บริการรถโดยสารในตัวเมือง",
+                    privateCar: "คาเฟ่ตั้งอยู่ในย่านนิมมานเหมินทร์ ขับรถจากตัวเมืองไปได้สะดวก"
+                },
+                images: [
+                    "../../modal/cafe/i21.jpg",
+                    "../../modal/cafe/i22.jpg",
+                    "../../modal/cafe/i23.jpg"
+                ]
+            },
+            {
+                id: 3,
+                name: "The Coffee Club",
+                description: "คาเฟ่สไตล์ตะวันตกที่มีกาแฟคุณภาพและอาหารเช้าอร่อยๆ รวมถึงเบเกอรี่ที่มีให้เลือกมากมาย บรรยากาศร้านน่านั่ง เหมาะสำหรับการพบปะเพื่อนฝูงหรือทำงาน",
+                travel: {
+                    publicTransport: "ใช้บริการรถสองแถวจากตัวเมืองไปยังย่านนิมมาน",
+                    privateCar: "ขับรถมาจากตัวเมืองเชียงใหม่ในเวลาไม่นาน โดยร้านตั้งอยู่ในย่านที่เข้าถึงได้ง่าย"
+                },
+                images: [
+                    "../../modal/cafe/i31.jpg",
+                    "../../modal/cafe/i32.jpg",
+                    "../../modal/cafe/i33.jpg"
+                ]
+            },
+            {
+                id: 4,
+                name: "FOHHIDE (โฟไฮด์)",
+                description: "Coffee Bar สุดลับสุดฮิตในอาคารชั้น 5 ใจกลางนิมมาน จ.เชียงใหม่ เชื่อว่าใครหลายๆคนจะมองไม่เห็นป้ายร้ายถ้าไม่ดูดีๆคือเลยแน่นอน ต้องขึ้นลิฟท์ไปชั้น5 ก็เจอ การตกแต่งแบบ Minimal สไตล์ญี่ปุ่น และวิวดอยสุเทพแบบเต็มๆ",
+                travel: {
+                    publicTransport: "ใช้บริการรถสาธารณะจากในเมืองเชียงใหม่, คุณสามารถใช้รถสองแถวหรือรถบัสที่มีเส้นทางไปยังพื้นที่ มีรถสองแถวที่วิ่งจากจุดต่างๆ เช่น ท่ารถเมล์ หรือ ตลาดประตูท่าแพ ไปยังที่ตั้งของร้าน",
+                    privateCar: "สามารถใช้แผนที่ GPS หรือแอปพลิเคชันนำทาง เช่น Google Maps เพื่อค้นหาเส้นทางไปยังร้าน FOHHIDE"
+                },
+                images: [
+                    "../../modal/cafe/i41.jpg",
+                    "../../modal/cafe/i42.jpg",
+                    "../../modal/cafe/i43.jpg"
+                ]
+            },
+            {
+                id: 5,
+                name: "Café de Nimman",
+                description: "คาเฟ่ในย่านนิมมานเหมินทร์ที่มีบรรยากาศเหมาะแก่การนั่งชิล มีเมนูกาแฟคุณภาพและขนมเค้กหลากหลาย ร้านตกแต่งด้วยสไตล์ร่วมสมัย และมีการออกแบบพื้นที่ให้เหมาะแก่การนั่งทำงานหรือพบปะเพื่อนฝูง",
+                travel: {
+                    publicTransport: "ใช้บริการรถสองแถวที่วิ่งจากใจกลางเมืองไปย่านนิมมานเหมินทร์",
+                    privateCar: "ขับรถไปตามถนนหลักในตัวเมืองเชียงใหม่และไปที่นิมมานเหมินทร์ โดยใช้เวลาประมาณ 5-10 นาที"
+                },
+                images: [
+                    "../../modal/cafe/i51.jpg",
+                    "../../modal/cafe/i52.jpg",
+                    "../../modal/cafe/i53.jpg"
+                ]
+            }
+        ];
+  
+        document.addEventListener("DOMContentLoaded", function () {
+            const cafeCardsContainer = document.getElementById("cafeCards");
+
+            cafes.forEach((cafe) => {
+                const card = document.createElement("div");
+                card.classList.add("col-12", "col-md-4", "mb-4");
+
+                const carouselIdCafe = `carousel-${cafe.id}`;
+
+                card.innerHTML = `
+                    <a href="cafe_template.php?id=${cafe.id}">
+                        <div class="card custom-cafe-shadow">
+                            <div class="card-header text-bg-warning text-dark fs-5 fw-bold">${cafe.name}</div>
+                            <div class="card-body">
+                                <div id="${carouselIdCafe}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        ${cafe.images.map((image, index) => `
+                                            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                                <img src="${image}" class="d-block w-100" alt="Image of ${cafe.name}">
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#${carouselIdCafe}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#${carouselIdCafe}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+
+                cafeCardsContainer.appendChild(card);
+            });
+        });
+
+    </script>
+</body>
+</html>

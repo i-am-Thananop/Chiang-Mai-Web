@@ -1,5 +1,6 @@
-AddType application/x-httpd-php .php
-location ~ \.php$ {
-    include snippets/fastcgi-php.conf;
-    fastcgi_pass unix:/var/run/php/php7.4-fpm.sock; # Adjust version
-}
+RewriteEngine On
+
+# Redirect all requests to their respective PHP files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1.php [L,QSA]

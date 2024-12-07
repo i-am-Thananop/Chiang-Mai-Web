@@ -1,6 +1,4 @@
+DirectoryIndex index.php index.html
 RewriteEngine On
-
-# Redirect all requests to their respective PHP files
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ $1.php [L,QSA]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]

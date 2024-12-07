@@ -67,12 +67,11 @@
                 </div>
 
                 <div class="row d-flex justify-content-center align-items-center h-100 py-5">
-                    <div class="col-8">
+                    <div class="col-8 mb-5">
                         <div class="d-flex flex-row">
-                            <div id="attraction-container"></div>
-                            <!-- <img src="../../modal/history/t1.jpg" alt="สถานที่เที่ยว 1 ประตูท่าแพ" style="width: 25%; border-radius: 20px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);">
+                            <img src="../../modal/history/t1.jpg" alt="สถานที่เที่ยว 1 ประตูท่าแพ" style="width: 25%; border-radius: 20px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);">
                             <div class="d-flex align-items-center" style="margin-left: 5%;">
-                                <a href="your-link-here" class="clickable-frame">
+                                <a href="template_travel1.php" class="clickable-frame">
                                     <div style="border: 2px solid #000; padding: 10px; border-radius: 10px; width: 400px; background-color: #fff;">
                                         <div class="d-flex justify-content-between">
                                             <h4 style="font-size: 40px; color: #000; font-weight: 600;">ประตูท่าแพ</h4>
@@ -82,40 +81,84 @@
                                         </div>
                                     </div>
                                 </a>
-                            </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-8 mb-5">
+                        <div class="d-flex flex-row">
+                            <img src="../../modal/history/t2.jpg" alt="สถานที่เที่ยว 2 ดอยสุเทพ" style="width: 25%; border-radius: 20px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);">
+                            <div class="d-flex align-items-center" style="margin-left: 5%;">
+                                <a href="template_travel2.php" class="clickable-frame">
+                                    <div style="border: 2px solid #000; padding: 10px; border-radius: 10px; width: 400px; background-color: #fff;">
+                                        <div class="d-flex justify-content-between">
+                                            <h4 style="font-size: 40px; color: #000; font-weight: 600;">ดอยสุเทพ</h4>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle ms-auto" viewBox="0 0 16 16" style="color: #000;">
+                                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-8 mb-5">
+                        <div class="d-flex flex-row">
+                            <img src="../../modal/history/t3.jpeg" alt="สถานที่เที่ยว 1 ประตูท่าแพ" style="width: 25%; border-radius: 20px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);">
+                            <div class="d-flex align-items-center" style="margin-left: 5%;">
+                                <a href="template_travel3.php" class="clickable-frame">
+                                    <div style="border: 2px solid #000; padding: 10px; border-radius: 10px; width: 400px; background-color: #fff;">
+                                        <div class="d-flex justify-content-between">
+                                            <h4 style="font-size: 40px; color: #000; font-weight: 600;">พระตำหนักภูพิงคราชนิเวศน์</h4>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle ms-auto" viewBox="0 0 16 16" style="color: #000;">
+                                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-8 mb-5">
+                        <div class="d-flex flex-row">
+                            <img src="../../modal/history/t4.jpg" alt="สถานที่เที่ยว 1 ประตูท่าแพ" style="width: 25%; border-radius: 20px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);">
+                            <div class="d-flex align-items-center" style="margin-left: 5%;">
+                                <a href="template_travel4.php" class="clickable-frame">
+                                    <div style="border: 2px solid #000; padding: 10px; border-radius: 10px; width: 400px; background-color: #fff;">
+                                        <div class="d-flex justify-content-between">
+                                            <h4 style="font-size: 40px; color: #000; font-weight: 600;">สวนสัตว์เชียงใหม่</h4>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle ms-auto" viewBox="0 0 16 16" style="color: #000;">
+                                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-8">
+                        <div class="d-flex flex-row">
+                            <img src="../../modal/history/t5.jpg" alt="สถานที่เที่ยว 1 ประตูท่าแพ" style="width: 25%; border-radius: 20px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);">
+                            <div class="d-flex align-items-center" style="margin-left: 5%;">
+                                <a href="template_travel5.php" class="clickable-frame">
+                                    <div style="border: 2px solid #000; padding: 10px; border-radius: 10px; width: 400px; background-color: #fff;">
+                                        <div class="d-flex justify-content-between">
+                                            <h4 style="font-size: 40px; color: #000; font-weight: 600;">ม่อนแจ่ม</h4>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle ms-auto" viewBox="0 0 16 16" style="color: #000;">
+                                                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-
-    <script src="../../controller/data_travel.js"></script>
-    <script>
-        const container = document.getElementById('attraction-container');
-
-        attractions.forEach((attraction) => {
-            const attractionDiv = document.createElement('div');
-            attractionDiv.classList.add('d-flex', 'flex-row', 'mb-4');
-
-            attractionDiv.innerHTML = `
-                <img src="${attraction.image}" alt="${attraction.name}" style="width: 25%; border-radius: 20px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);">
-                <div class="d-flex align-items-center" style="margin-left: 5%;">
-                    <a href="template_travel.php?id=${attraction.id}" class="clickable-frame">
-                        <div style="border: 2px solid #000; padding: 10px; border-radius: 10px; width: 400px; background-color: #fff;">
-                            <div class="d-flex justify-content-between">
-                                <h4 style="font-size: 40px; color: #000; font-weight: 600;">${attraction.name}</h4>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-right-circle ms-auto" viewBox="0 0 16 16" style="color: #000;">
-                                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            `;
-
-            container.appendChild(attractionDiv);
-        });
-    </script>
 </body>
 </html>
